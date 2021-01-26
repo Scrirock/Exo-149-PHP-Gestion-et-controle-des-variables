@@ -8,8 +8,8 @@
 $var = 0;
 // TODO votre code ici.
 
-
-
+if (empty($var))echo "vide<br>";
+else echo "pas vide<br>";
 
 /**
  * 2. Détruisez la variable déclarée, tentez de l'afficher ensuite en utilisant un print_r.
@@ -17,11 +17,16 @@ $var = 0;
 $eraseMe = "Please erase me !";
 // TODO votre code ici.
 
+unset($eraseMe);
+print_r($eraseMe);
 
 /**
  * 3. Déclarez vous même un tableau et utilisez var_dump pour afficher toutes les informations de debug.
  */
 // TODO votre code ici.
+
+$array = ["sdgfhgfsh", "aghr", "zerdhg", "th", "ztdhd", "tht" ,"hyuh"];
+var_dump($array);
 
 echo "<br>";
 
@@ -30,6 +35,7 @@ echo "<br>";
  */
 // TODO votre code ici.
 
+print_r($array);
 echo "<br>";
 
 
@@ -40,6 +46,8 @@ echo "<br>";
 $tab = ["test" => true, "name" => "Doe", "age" => 32];
 // TODO Votre code ici.
 
+if (isset($tab["doNotExists"])) echo "existe<br>";
+else echo "existe pas<br>";
 
 /**
  * 6. Créez une variable contenant:
@@ -63,3 +71,20 @@ $tab = ["test" => true, "name" => "Doe", "age" => 32];
  */
 
 // TODO votre code ici.
+
+$bool = true;
+$int = 54;
+$float = 5.45;
+$string = "Salut";
+
+function testVariable($variable){
+    if (is_bool($variable)) echo "booléen<br>";
+    elseif (is_int($variable)) echo "entier<br>";
+    elseif (is_float($variable)) echo "flottant<br>";
+    elseif (is_string($variable)) echo "chaine de caractère<br>";
+    else echo "rien du tout";
+}
+testVariable($bool);
+testVariable($int);
+testVariable($float);
+testVariable($string);
